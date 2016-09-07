@@ -1,4 +1,4 @@
-package homeWork1;
+package homeWork2;
 
 /**
  * Created by Prigovor on 07.09.2016.

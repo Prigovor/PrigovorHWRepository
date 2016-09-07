@@ -1,6 +1,4 @@
-package homeWork1;
-
-import java.math.BigInteger;
+package homeWork2;
 
 /**
  * Created by Prigovor on 05.09.2016.
