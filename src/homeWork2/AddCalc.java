@@ -12,34 +12,19 @@ public class AddCalc {
         ConsoleCalc calc = new ConsoleCalc();
 
         System.out.println("Введите первое число: ");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        calc.setAge1(Integer.parseInt(reader.readLine()));
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println("Введите второе число: ");
-        calc.setAge2(Integer.parseInt(reader.readLine()));
+            calc.setNumber1(Integer.parseInt(reader.readLine()));
 
-        System.out.println("Выберите операцию(+, -, *, /): ");
+            System.out.println("Введите второе число: ");
+            calc.setNumber2(Integer.parseInt(reader.readLine()));
 
-        switch (reader.readLine()) {
-            case "+":
-                calc.add(calc.getAge1(), calc.getAge2());
-                System.out.println(calc.getAge1() + " + " + calc.getAge2() + " = " + calc.getResult());
-                break;
-            case "-":
-                calc.sub(calc.getAge1(), calc.getAge2());
-                System.out.println(calc.getAge1() + " - " + calc.getAge2() + " = " + calc.getResult());
-                break;
-            case "*":
-                calc.mul(calc.getAge1(), calc.getAge2());
-                System.out.println(calc.getAge1() + " * " + calc.getAge2() + " = " + calc.getResult());
-                break;
-            case "/":
-                calc.div(calc.getAge1(), calc.getAge2());
-                System.out.println(calc.getAge1() + " / " + calc.getAge2() + " = " + calc.getResult());
-                break;
-            default:
-                System.out.println("Введите операцию из списка(+, -, *, /)");
+            System.out.println("Выберите операцию(+, -, *, /): ");
 
+            calc.calculate(calc.getNumber1(), calc.getNumber2(), reader.readLine());
+        } catch (Exception e) {
+            System.out.println("Ввдите пожалуйста ЧИСЛО");
         }
     }
 }
