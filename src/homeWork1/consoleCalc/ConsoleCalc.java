@@ -1,4 +1,4 @@
-package homeWork2;
+package homeWork1.consoleCalc;
 
 /**
  * Created by Prigovor on 07.09.2016.

@@ -1,4 +1,4 @@
-package homeWork2;
+package homeWork1.consoleCalc;
 
 import java.io.BufferedReader;
 import java.io.IOException;
