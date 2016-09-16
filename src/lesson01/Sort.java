@@ -83,7 +83,8 @@ public class Sort {
                 iterations++;
             }
             left++;
-        } while (left <= right);
+        }
+        while (left <= right);
     }
 
     public static void selectionSort(int[] arr) {
