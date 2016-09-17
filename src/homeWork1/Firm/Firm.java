@@ -40,16 +40,16 @@ public class Firm {
             for (int i = left; i < right; i++) {
                 if (employee.get(i).getRate() > employee.get((i + 1)).getRate()) {
                     tmp = employee.get(i);
-                    employee.add(i, employee.get((i + 1)));//arr[i] = arr[i + 1];
-                    employee.add((i + 1), tmp);//arr[i + 1] = tmp;
+                    employee.set(i, employee.get((i + 1)));
+                    employee.set((i + 1), tmp);
                 }
             }
             right--;
             for (int j = right; j > left; j--) {
                 if (employee.get(j).getRate() < employee.get((j - 1)).getRate()) {
                     tmp = employee.get(j);
-                    employee.add(j, employee.get((j - 1)));//arr[j] = arr[j - 1];
-                    employee.add((j - 1), tmp);//arr[j - 1] = tmp;
+                    employee.set(j, employee.get((j - 1)));
+                    employee.set((j - 1), tmp);
                 }
             }
             left++;

@@ -22,10 +22,10 @@ public class Add {
 //        firm.printAllEmployees();
 
         firm.addEmployees(employee3);
-//
+
 
         firm.addEmployees(employee4);
-//        firm.printSortAllEmp();
+        firm.printSortAllEmp();
         firm.printAllEmployees();
 
     }
