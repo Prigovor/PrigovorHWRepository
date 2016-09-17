@@ -1,7 +1,8 @@
 package homeWork1.Firm;
 
-import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,15 +27,19 @@ public class Firm {
     }
 
     void printAllEmployees() {
-        for (int i = 0; i < employee.size(); i++) {
-            System.out.println(employee.get(i));
+        for (Employee employeeVar : employee) {
+            System.out.println(employeeVar);
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         }
+//        for (int i = 0; i < employee.size(); i++) {
+//            System.out.println(employee.get(i));
+//            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+//        }
     }
 
     void printSortAllEmp() {
         int left = 0, right = employee.size() - 1;
-        Employee tmp;
+        Employee tmp = null;
 
         do {
             for (int i = left; i < right; i++) {
@@ -58,5 +63,30 @@ public class Firm {
 
     void addEmployees(Employee emp) {
         employee.add(emp);
+    }
+
+    void giveSalaryForAll() {
+        for (Employee empVar : employee) {
+            empVar.setCardAccount(empVar.getCardAccount() + empVar.getRate());
+            System.out.println("Сотруднику " + empVar.getNameEmployee() + " начислено " + empVar.getRate() + "$");
+            System.out.println("На счету " + empVar.getCardAccount() + "$");
+
+            salaryAccount -= empVar.getRate();
+            System.out.println("На счету фирмы осталось " + salaryAccount + "$");
+        }
+    }
+
+    void calcVocations() {
+        Long vocation ;
+        LocalDate date = LocalDate.now();
+
+        for (Employee empVar : employee) {
+            Period period = Period.between(empVar.getJoining(), date);
+            if (period.toTotalMonths() > 6) {
+                System.out.println("Колличество отпускных дней: " + empVar.getNameEmployee() + " - " + (vocation = period.toTotalMonths() * 2));
+            } else {
+                System.out.println("Колличество отпускных дней: " + empVar.getNameEmployee() + " - 0");
+            }
+        }
     }
 }
